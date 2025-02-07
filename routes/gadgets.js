@@ -57,7 +57,7 @@ router.post("/", async (req, res) => {
 });
 
 // PUT  updted gadget
-router.put("/:id", async (req, res) => {
+router.patch("/:id", async (req, res) => {
   try {
     const { status } = req.body;
     const updatedGadget = await prisma.gadget.update({
