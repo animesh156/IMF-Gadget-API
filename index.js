@@ -1,16 +1,11 @@
-const express = require('express')
-const app = express()
-const dotenv = require('dotenv').config()
+const express = require("express");
+const app = express();
+const dotenv = require("dotenv").config();
+const port = process.env.PORT;
+const IMFRoutes = require("./routes/IMF");
 
-const port = process.env.PORT
-
-
-app.get('/', (req,res) => {
-    res.json("IMF API")
-})
-
+app.use("/api", IMFRoutes);
 
 app.listen(port, () => {
-    console.log(`Server started at ${port}`)
-})
-
+  console.log(`Server started at ${port}`);
+});
